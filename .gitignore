@@ -1,0 +1,4 @@
+chess/node_modules
+chess/build
+chess-backend/node_modules
+chess-backend/.env
