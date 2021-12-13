@@ -1,0 +1,28 @@
+.create-game-container {
+    padding: 24px;
+    text-align: center;
+}
+
+.color-choice {
+    border: 1px solid black;
+    border-radius: 4px;
+    height: 20px;
+    width: 100px;
+    margin: 0 auto;
+    margin-bottom: 6px;
+    padding: 6px;
+
+    cursor: pointer;
+}
+
+.selected-color {
+    background-color: #3f51b5;
+    border-color: #3f51b5;
+
+    color: white;
+}
+
+.create-button {
+    margin-top: 24px;
+    font-size: 24px;
+}

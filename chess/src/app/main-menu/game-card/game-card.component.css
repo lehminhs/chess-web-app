@@ -1,0 +1,21 @@
+.card-container {
+    border: 1px solid #3F51B5;
+    padding: 20px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.card-container:hover {
+    background-color: #3F51B5;
+    color: white;
+}
+
+.card-title {
+    margin-bottom: 12px;
+}
+
+img {
+    height: 20px;
+    vertical-align: -3px;
+}

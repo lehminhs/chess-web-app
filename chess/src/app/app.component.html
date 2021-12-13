@@ -1,0 +1,36 @@
+<mat-toolbar color="primary" class="expanded-toolbar">
+    <span>
+        <button mat-button routerLink="/">{{mainTitle}}</button>
+    </span>
+    <span class='right-container'>
+        <span fxLayout="row" fxShow="false" fxShow.gt-sm class='menu-icon-container'>
+            <button mat-button routerLink="/login" *ngIf="!isAuthenticated && this.title != 'login'">
+                <mat-icon>power_settings_new</mat-icon>
+                Login
+            </button>
+            <button mat-button *ngIf="isAuthenticated" (click)="logout()">
+                <mat-icon>exit_to_app</mat-icon>
+                Logout
+            </button>
+            <button mat-button *ngIf="!isAuthenticated && this.title != 'register'" routerLink="/register">
+                <mat-icon>app_registration</mat-icon>
+                Register
+            </button>
+        </span>
+        <span fxLayout="row" fxHide="false" fxHide.gt-sm *ngIf="isAuthenticated">
+            <button mat-button [mat-menu-trigger-for]="menu">
+                {{ this.username }}
+                <mat-icon>menu</mat-icon>
+            </button>
+        </span>
+    </span>
+</mat-toolbar>
+
+<mat-menu x-position="before" #menu="matMenu" class='menu-icon-container'>
+    <button mat-menu-item routerLink="/">
+        <mat-icon>home</mat-icon>
+        Home
+    </button>
+</mat-menu>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,155 @@
+li {
+    list-style-type: none;
+}
+
+ul {
+    margin: 2px;
+    border: 1px solid black;
+    display: inline-block;
+    padding-left: 0px;
+}
+
+.mat-spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: calc(56vh + 16px);
+    height: calc(56vh + 16px);
+
+    background-color: #dbdbdb;
+    opacity: .7;
+}
+
+.back-button {
+    width: 100%;
+}
+
+.promotion-panel {
+    height: calc(7vh + 4px);
+}
+
+.left-container {
+    position: absolute;
+    left: 2vw;
+    top: calc(10vh + 64px);
+    border: 1px solid #3F51B5;
+    padding: 24px;
+}
+
+.board-container {
+    text-align: center;
+    margin-top: 8vh;
+}
+
+/* .board-ul {
+    border: 1px solid black;
+    display: inline-block;
+    padding-left: 0px;
+} */
+
+.board-row {
+    display: flex;
+}
+
+/* .promotion-ul {
+    display: inline-block;
+    padding-left: 0px;
+} */
+
+.promotion-square {
+    width: 7vh;
+    height: 7vh;
+    border: 1px solid black;
+    display: inline-block;
+}
+
+.square-container {
+    border: 1px solid black;
+    height: 7vh;
+    width: 7vh;
+}
+
+.square-piece {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    z-index: 100;
+}
+
+.black-square {
+    background-color: #686868;
+}
+
+.white-square {
+    background-color: #ffffff;
+}
+
+.highlighted {
+    background-color: #cfe2f3 !important;
+}
+
+.white-queen {
+    background-size: contain;
+    background-image: url('./../../assets/pieces/white-queen.png');
+}
+
+.white-pawn {
+    background-size: contain;
+    background-image: url('./../../assets/pieces/white-pawn.png');
+}
+
+.white-knight {
+    background-size: contain;
+    background-image: url('./../../assets/pieces/white-knight.png');
+}
+
+.white-bishop {
+    background-size: contain;
+    background-image: url('./../../assets/pieces/white-bishop.png');
+}
+
+.white-king {
+    background-size: contain;
+    background-image: url('./../../assets/pieces/white-king.png');
+}
+
+.white-rook {
+    background-size: contain;
+    background-image: url('./../../assets/pieces/white-rook.png');
+}
+
+.black-queen {
+    background-size: contain;
+    background-image: url('./../../assets/pieces/black-queen.png');
+}
+
+.black-pawn {
+    background-size: contain;
+    background-image: url('./../../assets/pieces/black-pawn.png');
+}
+
+.black-knight {
+    background-size: contain;
+    background-image: url('./../../assets/pieces/black-knight.png');
+}
+
+.black-bishop {
+    background-size: contain;
+    background-image: url('./../../assets/pieces/black-bishop.png');
+}
+
+.black-king {
+    background-size: contain;
+    background-image: url('./../../assets/pieces/black-king.png');
+}
+
+.black-rook {
+    background-size: contain;
+    background-image: url('./../../assets/pieces/black-rook.png');
+}
+
+.empty {
+    background-size: contain;
+    background-image: url('./../../assets/pieces/empty.png');
+}

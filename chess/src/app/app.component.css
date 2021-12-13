@@ -1,0 +1,8 @@
+.right-container {
+    position: absolute; 
+    right: 16px;
+}
+
+.menu-button {
+    float: right;
+}

@@ -1,0 +1,47 @@
+h2 {
+    text-align: center;
+}
+
+.main-menu-container {
+    padding-top: 24px;
+    text-align: center;
+}
+
+.statistics-container {
+    width: 100%;
+    text-align: center;
+    margin: 1vh auto;
+}
+
+.statistics {
+    border: 1px solid black;
+    display: inline-block;
+    padding: 24px;
+    margin: 24px;
+    width: 200px;
+    text-align: right;
+}
+
+.button-container {
+    width: 100%;
+    text-align: center;
+}
+
+.main-menu-button {
+    margin: 24px;
+    width: 200px !important;
+}
+
+.error-container {
+    color: rgb(180, 0, 0);
+    width: 70vw;
+    margin: 2vh auto;
+    padding: 16px;
+    background-color: rgb(255, 223, 223);
+    border-radius: 6px;
+}
+
+.game-container {
+    width: 500px;
+    margin: 2vh auto;
+}

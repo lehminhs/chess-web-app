@@ -1,0 +1,24 @@
+.square-container {
+    border: 1px solid black;
+    height: 7vh;
+    width: 7vh;
+}
+
+.square-piece {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    z-index: 100;
+}
+
+.black-square {
+    background-color: #686868;
+}
+
+.white-square {
+    background-color: #ffffff;
+}
+
+.highlighted {
+    background-color: #cfe2f3 !important;
+}

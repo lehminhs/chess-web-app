@@ -1,0 +1,23 @@
+img {
+    width: 20px;
+    vertical-align: bottom;
+}
+
+.sidebar-container {
+    margin-top: 20px;
+    width: 198px;
+}
+
+.gameid-container {
+    margin-bottom: 20px;
+}
+
+
+.resign-container {
+    margin-top: 20px;
+}
+
+.status-container {
+    margin-top: 20px;
+    text-align: center;
+}

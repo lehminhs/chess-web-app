@@ -1,0 +1,3 @@
+<div class="square-container" [ngClass]="{ 'black-square': this.color == 'black', 'white-square': this.color == 'white', 'highlighted': this.highlighted }">
+    <img class="square-piece" draggable="false" src="./../../../assets/pieces/{{this.data.icon}}">
+</div>

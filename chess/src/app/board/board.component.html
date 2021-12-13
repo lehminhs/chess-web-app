@@ -1,0 +1,70 @@
+<div class="board-container">
+    <div class='left-container'>
+        <button color="primary" (click)="handleBack()" routerLink="/" mat-raised-button class='back-button'>
+            <span class="material-icons">
+                arrow_back
+            </span>
+            <span>BACK</span>
+        </button>
+        <app-sidebar [data]="this.sideData"></app-sidebar>
+    </div>
+    <div class="promotion-panel">
+        <ul class="promotion-ul white-icons" *ngIf="this.showPromotion">
+            <li class="promotion-square">
+                <img class="square-piece"
+                    (click)="promote(this.promoting[0], this.promoting[1], 'queen', this.sideData.playerColor)" draggable="false"
+                    src="./../../../assets/pieces/{{this.promotionQueenIcon}}">
+            </li>
+            <li class="promotion-square">
+                <img class="square-piece"
+                    (click)="promote(this.promoting[0], this.promoting[1], 'rook', this.sideData.playerColor)" draggable="false"
+                    src="./../../../assets/pieces/{{this.promotionRookIcon}}">
+            </li>
+            <li class="promotion-square">
+                <img class="square-piece"
+                    (click)="promote(this.promoting[0], this.promoting[1], 'knight', this.sideData.playerColor)"
+                    draggable="false" src="./../../../assets/pieces/{{this.promotionKnightIcon}}">
+            </li>
+            <li class="promotion-square">
+                <img class="square-piece"
+                    (click)="promote(this.promoting[0], this.promoting[1], 'bishop', this.sideData.playerColor)"
+                    draggable="false" src="./../../../assets/pieces/{{this.promotionBishopIcon}}">
+            </li>
+        </ul>
+    </div>
+    <!-- <ul class='board-ul'>
+        <li class="board-row" *ngFor="let row of board; let r = index">
+            <app-square 
+            (click)="this.clickHandler(r, c)" 
+            *ngFor="let square of row; let c = index" 
+            [position]=[r,c] 
+            [data]=this.board[r][c]
+            [highlighted]="this.highlightHelper(r,c)"></app-square>
+        </li>
+    </ul> -->
+    <ul class='board-ul'>
+        <div class="mat-spinner-container" *ngIf="this.inProgress">
+            <mat-spinner></mat-spinner>
+        </div>
+        <li class="board-row" *ngFor="let row of board; let r = index">
+            <div class="square-container" *ngFor="let square of row; let c = index" (click)="this.clickHandler(r, c)"
+                [ngClass]="{ 'black-square': (r + c) % 2 == 1, 'white-square': (r + c) % 2 == 0, 'highlighted': this.highlightHelper(r,c) }">
+                <img class="square-piece white-queen" draggable="false" [ngClass]="{
+                        'white-queen' : board[r][c].icon == 'white-queen',
+                        'white-pawn' : board[r][c].icon == 'white-pawn',
+                        'white-knight' : board[r][c].icon == 'white-knight',
+                        'white-bishop' : board[r][c].icon == 'white-bishop',
+                        'white-king' : board[r][c].icon == 'white-king',
+                        'white-rook' : board[r][c].icon == 'white-rook',
+                        'black-queen' : board[r][c].icon == 'black-queen',
+                        'black-pawn' : board[r][c].icon == 'black-pawn',
+                        'black-knight' : board[r][c].icon == 'black-knight',
+                        'black-bishop' : board[r][c].icon == 'black-bishop',
+                        'black-king' : board[r][c].icon == 'black-king',
+                        'black-rook' : board[r][c].icon == 'black-rook',
+                        'empty' : board[r][c].icon == 'empty'
+                    }">
+            </div>
+        </li>
+    </ul>
+</div>

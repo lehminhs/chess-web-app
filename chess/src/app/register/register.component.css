@@ -1,0 +1,36 @@
+.register-container {
+    width: 80vw;
+    height: auto;
+
+    max-width: 400px;
+    max-height: 300px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+
+    margin: 12vh auto;
+
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+.input-wrapper {
+    width: 100%;
+}
+
+.button {
+    text-align: center;
+}
+
+.error-container {
+    color: rgb(180, 0, 0);
+    width: 70vw;
+    margin: 2vh auto;
+    padding: 16px;
+    background-color: rgb(255, 223, 223);
+    border-radius: 6px;
+}

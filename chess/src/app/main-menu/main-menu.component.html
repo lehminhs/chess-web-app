@@ -1,0 +1,16 @@
+<div class='main-menu-container'>
+    <div class="error-container" *ngIf="errorMessage != ''"> {{ errorMessage }} </div>
+    <div class='button-container'>
+        <button class="main-menu-button" color="primary" (click)='handleComputerGame()' mat-raised-button>Play With a
+            Computer</button>
+        <button class="main-menu-button" color="primary" (click)='handleCreateGame()' mat-raised-button>Create a
+            Game</button>
+        <button class="main-menu-button" color="primary" (click)='handleJoinGameWithCode()' mat-raised-button>Join a
+            Game</button>
+    </div>
+    <div class="game-container">
+        <h1><u>Open Games</u></h1>
+        <p *ngIf="this.openGames.length == 0">You have no games open.</p>
+        <app-game-card *ngFor="let game of this.openGames" [data]='game' (click)="this.joinGameFromCard(game.gameId)"></app-game-card>
+    </div>
+</div>

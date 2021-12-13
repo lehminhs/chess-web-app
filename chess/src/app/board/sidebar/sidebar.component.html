@@ -1,0 +1,17 @@
+<div class='sidebar-container'>
+    <div class='gameid-container'>
+        <b><u># {{ this.data.gameId }}</u></b>
+    </div>
+    <div class="whiteplayer-container">
+        {{ this.data.whitePlayer }} <img src="./../../../assets/pieces/white-pawn.png">
+    </div>
+    <div class="blackplayer-container">
+        {{ this.data.blackPlayer }} <img src="./../../../assets/pieces/black-pawn.png">
+    </div>
+    <div class="status-container">
+        <i>{{ this.data.message }}</i>
+    </div>
+    <div class='resign-container'>
+        <button color="warn" (click)="handleResign()" [disabled]="this.data.disableResign" mat-stroked-button class='back-button'>RESIGN</button>
+    </div>
+</div>

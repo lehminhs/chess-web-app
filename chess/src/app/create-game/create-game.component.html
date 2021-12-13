@@ -1,0 +1,15 @@
+<div class='create-game-container'>
+    <div class='title-div'>
+        <h2 style='margin: 0px;'>Create Game</h2>
+        <p style='margin-top: 0px;'>vs. Player</p>
+    </div>
+    <div class='color-div'>
+        <p><u><b>Player Color</b></u></p>
+        <div class="color-choice" (click)='setColor(0)' [ngClass]="{'selected-color': this.colorChoice == 0}">White</div>
+        <div class="color-choice" (click)='setColor(1)' [ngClass]="{'selected-color': this.colorChoice == 1}">Black</div>
+        <div class="color-choice" (click)='setColor(2)' [ngClass]="{'selected-color': this.colorChoice == 2}">Random</div>
+    </div>
+    <div class="buttons-div">
+        <button class="create-button" color="primary" (click)='createGame()' mat-dialog-close mat-raised-button>Continue</button>
+    </div>
+</div>

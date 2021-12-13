@@ -1,0 +1,15 @@
+<div class='join-game-container'>
+    <div class='title-div'>
+        <h2 style='margin: 0px 0px 12px 0px;'>Join Game</h2>
+    </div>
+    <p class="error-p" *ngIf="this.hasError">Invalid Code</p>
+    <div class='code-input-div'>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>7-character code</mat-label>
+            <input matInput placeholder="Ex. Pizza" [(ngModel)]="this.code" (ngModelChange)="this.checkJoinable()">
+        </mat-form-field>
+    </div>
+    <div class="buttons-div">
+        <button class="create-button" color="primary" [disabled]="this.disabledJoin" (click)='joinGame()' mat-dialog-close mat-raised-button>Continue</button>
+    </div>
+</div>
