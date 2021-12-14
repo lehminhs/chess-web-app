@@ -304,12 +304,15 @@ export class BoardComponent implements OnInit, OnDestroy {
           tempBoard.unshift(JSON.parse(JSON.stringify(this.board[row])).reverse());
         }
 
-        this.boardService.updateGame(tempBoard, this.sideData.gameId, this.sideData.currentTurn, "Chess AI", blackPlayer, whiteKing, blackKing, this.canCastleRightOp, this.canCastleLeftOp, this.canCastleRight, this.canCastleLeft, this.gameType, this.firstMove, this.sideData.completed, this._id)
-          .subscribe();
+        this.boardService.updateGame(tempBoard, this.sideData.gameId, -1, "Chess AI", blackPlayer, whiteKing, blackKing, this.canCastleRightOp, this.canCastleLeftOp, this.canCastleRight, this.canCastleLeft, this.gameType, this.firstMove, this.sideData.completed, this._id)
+          .subscribe(
+            res => {
+              this.fetchGame();
+            }
+          );
       }
 
       this.lockUp = false;
-      this.sideData.currentTurn = -1;
     } else {
       this.errorService.setErrorMessage('Invalid Game Type');
       this.router.navigate(['']);

@@ -44,12 +44,7 @@ export const signUp = async (req, res) => {
 
         const hashedPassword = await bcrypt.hash(password, 12);
 
-        const computerWins = 0;
-        const computerLosses = 0;
-        const playerWins = 0;
-        const playerLosses = 0;
-
-        const newUser = await User.create({ username, hashedPassword, computerWins, computerLosses, playerWins, playerLosses });
+        const newUser = await User.create({ username, hashedPassword });
 
         res.status(200).json({ result: newUser.username });
     } catch (error) {
@@ -63,7 +58,7 @@ export const fetchUser = async (req, res) => {
 
     try {
         const user = await User.findOne({ username: username });
-        const master = { id: user._id, computerWins: user.computerWins, computerLosses: user.computerLosses, playerWins: user.playerWins, playerLosses: user.playerLosses };
+        const master = { id: user._id };
 
         res.status(200).json(master);
     } catch (error) {
