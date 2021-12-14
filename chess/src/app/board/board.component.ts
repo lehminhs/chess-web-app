@@ -272,6 +272,8 @@ export class BoardComponent implements OnInit, OnDestroy {
     if (this.sideData.completed != 0) {
       this.resetState();
       this.lockUp = true;
+      clearInterval(this.fetchInterval);
+      clearInterval(this.joinInterval);
       return;
     }
 
@@ -1016,6 +1018,8 @@ export class BoardComponent implements OnInit, OnDestroy {
       var canCastleRightBlack = this.canCastleRight;
     }
 
+    this.resetBoard();
+
     if (this.sideData.playerColor == -1) {
       var tempBoard = [];
 
@@ -1024,10 +1028,28 @@ export class BoardComponent implements OnInit, OnDestroy {
       }
 
       this.boardService.updateGame(tempBoard, this.sideData.gameId, this.sideData.currentTurn, whitePlayer, blackPlayer, whiteKing, blackKing, canCastleRightWhite, canCastleLeftWhite, canCastleRightBlack, canCastleLeftBlack, this.gameType, this.firstMove, this.sideData.completed, this._id)
-        .subscribe();
+        .subscribe(
+          res => {
+            console.log('ended game');
+            this.fetchGame()
+          }
+        );
     } else {
       this.boardService.updateGame(this.board, this.sideData.gameId, this.sideData.currentTurn, whitePlayer, blackPlayer, whiteKing, blackKing, canCastleRightWhite, canCastleLeftWhite, canCastleRightBlack, canCastleLeftBlack, this.gameType, this.firstMove, this.sideData.completed, this._id)
-        .subscribe();
+        .subscribe(
+          res => {
+            console.log('ended game');
+            this.fetchGame();
+          }
+        );
+    }
+
+    clearInterval(this.fetchInterval);
+    if (this.gameType == 0) {
+      this.lockUp = true;
+      this.fetchInterval = setInterval(() => {
+        this.fetchGame();
+      }, 5000);
     }
 
     this.resetState();

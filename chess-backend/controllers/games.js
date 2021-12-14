@@ -7,7 +7,7 @@ export const createGame = async (req, res) => {
     const { whitePlayer, blackPlayer, gameType } = req.body;
 
     try {
-        const existingGame = await Game.findOne({ whitePlayer, blackPlayer, gameType });
+        const existingGame = await Game.findOne({ whitePlayer, blackPlayer, gameType, completed: 0 });
         if (existingGame) {
             return res.status(400).json({ message: "Open game already exists" });
         }
@@ -70,8 +70,6 @@ export const updateGame = async (req, res) => {
     }
 
     const updatedGame = { board, gameId, currentTurn, whitePlayer, blackPlayer, whiteKing, blackKing, canCastleRightWhite, canCastleLeftWhite, canCastleRightBlack, canCastleLeftBlack, gameType, firstMove, completed, _id: _id };
-
-    console.log(updatedGame);
 
     await Game.findByIdAndUpdate(_id, updatedGame, { new: true });
 
